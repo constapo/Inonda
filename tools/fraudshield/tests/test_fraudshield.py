@@ -36,3 +36,35 @@ class T(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class T2(unittest.TestCase):
+    def test_graph(self):
+        from fraudshield import graph
+        rel = [{"ocid": "o1", "buyer": {"id": "B"},
+                "parties": [{"id": "A", "address": {"streetAddress": "1 Main"}},
+                            {"id": "C", "address": {"streetAddress": "1 MAIN"}}],
+                "tender": {"tenderers": [{"id": "A"}, {"id": "C"}]}, "awards": []}]
+        t, p = graph.load_ocds(rel)
+        self.assertEqual(graph.shared_attribute_links(p, t)[0].detector, "graph.shared_address")
+
+    def test_media(self):
+        from fraudshield import media
+        with tempfile.NamedTemporaryFile(delete=False) as f:
+            f.write(b"\x89PNG....Midjourney job 123")
+        self.assertEqual(media.analyze_media(f.name)[0].detector, "media.generator_metadata")
+
+    def test_calibrate(self):
+        from fraudshield import calibrate
+        cases = [{"input": x, "label": x > 5} for x in range(10)]
+        r = calibrate.sweep(lambda x, t: x > t, cases, {"t": [2, 5, 8]})
+        self.assertEqual(r["params"]["t"], 5)
+
+    def test_containment(self):
+        from fraudshield import containment as c
+        log = ['{"ts":1,"agent_id":"a","src_ip":"10.0.0.2","cmd":"ls"}',
+               '{"ts":9,"agent_id":"a","src_ip":"8.8.8.8","cmd":"curl x"}']
+        rows = c.trace(log)
+        self.assertEqual(rows[0]["src_ip"], "8.8.8.8"); self.assertEqual(rows[0]["ip_class"], "public")
+        with self.assertRaises(ValueError): c.quarantine_plan("1.2.3.4; rm -rf /")
+        with self.assertRaises(PermissionError): c.apply_plan(c.quarantine_plan("10.0.0.5"), False)
