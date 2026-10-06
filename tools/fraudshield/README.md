@@ -25,3 +25,10 @@ python3 -m fraudshield.cli quarantine --admin-ip 10.0.0.5 --apply --i-own-this-h
 - Works only on hosts you administer; it never connects to remote systems or retaliates.
 - Quarantine drops all traffic except loopback and one admin IP (SSH). It cannot "close all ports on any system", only the machine it runs on.
 - A source IP is where a command arrived from, often a VPN/proxy/Tor exit or compromised relay; geolocation (offline CSV you supply) is approximate and is a lead for your provider/law enforcement, not proof of identity.
+
+## Sanctions database (OpenSanctions)
+```
+python3 -m fraudshield.cli sanctions-build        # downloads targets.simple.csv into data/ and builds data/sanctions.db
+python3 -m fraudshield.cli screen "Some Company Ltd" "Jane Doe"
+```
+Data is CC BY-NC 4.0 (commercial use needs a licence) and is git-ignored. Name matching is exact on normalized tokens, so hits need human review and misses are possible. Needs network access to data.opensanctions.org.

@@ -2,7 +2,7 @@ import argparse
 import json
 import sys
 from dataclasses import asdict
-from . import calibrate, containment, coordination, graph, media, procurement, provenance, text
+from . import calibrate, containment, coordination, graph, media, sanctions, procurement, provenance, text
 
 
 def _emit(findings):
@@ -24,6 +24,8 @@ def main(argv=None):
     s = sub.add_parser("trace"); s.add_argument("log"); s.add_argument("--geoip")
     s = sub.add_parser("quarantine"); s.add_argument("--admin-ip", required=True)
     s.add_argument("--apply", action="store_true"); s.add_argument("--i-own-this-host", action="store_true")
+    s = sub.add_parser("sanctions-build"); s.add_argument("--db", default="data/sanctions.db"); s.add_argument("--csv")
+    s = sub.add_parser("screen"); s.add_argument("names", nargs="+"); s.add_argument("--db", default="data/sanctions.db")
     a = ap.parse_args(argv)
     if a.cmd == "text":
         return _emit(text.analyze_text(open(a.file, encoding="utf-8").read()))
@@ -48,6 +50,13 @@ def main(argv=None):
         else:
             print("# dry run; add --apply --i-own-this-host as root to enforce")
         return 0
+    if a.cmd == "sanctions-build":
+        import os
+        os.makedirs(os.path.dirname(a.db) or ".", exist_ok=True)
+        path = a.csv or sanctions.download(os.path.join(os.path.dirname(a.db) or ".", "targets.simple.csv"))
+        print(sanctions.build(path, a.db), "entities"); return 0
+    if a.cmd == "screen":
+        return _emit(sanctions.screen(a.db, a.names))
     if a.cmd == "manifest":
         print(provenance.dump(provenance.build_manifest(a.dir))); return 0
     if a.cmd == "verify":
