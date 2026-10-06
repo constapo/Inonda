@@ -1,0 +1,6 @@
+{
+  "name": "inonda-agents",
+  "version": "1.0.0",
+  "description": "34 specialist subagents (design, engineering, marketing, product, project-management, studio-operations, testing) adapted from aiagentskit/claude-agents-library.",
+  "author": { "name": "constapo" }
+}
