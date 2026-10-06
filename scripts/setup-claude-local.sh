@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # Rebuilds, on YOUR computer, the agents and skills installed during the cloud session.
-# Safe to re-run: never overwrites an existing agent/skill; updates the cloned sources.
-# Usage: bash setup-claude-local.sh [--skip-agency] [--skip-skills]
+# Safe to re-run: by default never overwrites existing agents/skills; pulls the latest upstream sources.
+# Usage: bash setup-claude-local.sh [--update] [--skip-agency] [--skip-skills]
+#   --update  also refresh already-installed agents/skills whose upstream content changed
+#             (needed once to swap older same-named agents for the VoltAgent versions)
 set -euo pipefail
 
 CLAUDE="${HOME}/.claude"
@@ -10,9 +12,9 @@ AGENTS="${CLAUDE}/agents"
 SKILLS="${CLAUDE}/skills"
 mkdir -p "$VENDOR" "$AGENTS" "$SKILLS"
 
-SKIP_AGENCY=0; SKIP_SKILLS=0
+SKIP_AGENCY=0; SKIP_SKILLS=0; UPDATE=0
 for a in "$@"; do
-  case "$a" in --skip-agency) SKIP_AGENCY=1;; --skip-skills) SKIP_SKILLS=1;; esac
+  case "$a" in --skip-agency) SKIP_AGENCY=1;; --skip-skills) SKIP_SKILLS=1;; --update) UPDATE=1;; esac
 done
 
 sync_repo() {  # sync_repo <url> <dir>
@@ -20,25 +22,34 @@ sync_repo() {  # sync_repo <url> <dir>
   else GIT_LFS_SKIP_SMUDGE=1 git clone -q --depth 1 "$1" "$2"; fi
 }
 
-copy_new() {   # copy_new <src> <dest> -- copy file/dir only if it doesn't exist yet
-  local name; name="$(basename "$1")"
-  [ -e "$2/$name" ] && return 0
-  cp -r "$1" "$2/" && echo "  + $name"
+copy_new() {   # copy_new <src> <dest> -- copy if missing; with --update, replace if content differs
+  local name dest; name="$(basename "$1")"; dest="$2/$name"
+  if [ ! -e "$dest" ]; then
+    cp -r "$1" "$2/" && echo "  + $name"
+  elif [ "$UPDATE" -eq 1 ] && ! diff -rq "$1" "$dest" >/dev/null 2>&1; then
+    rm -rf "$dest" && cp -r "$1" "$2/" && echo "  ~ $name (updated)"
+  fi
 }
 
-echo "== Agents: weaponslab/claude-agents (83) =="
-sync_repo https://github.com/weaponslab/claude-agents "$VENDOR/weaponslab-claude-agents"
-for f in "$VENDOR"/weaponslab-claude-agents/*.md; do
-  [ "$(basename "$f")" = README.md ] && continue
-  copy_new "$f" "$AGENTS"
-done
+CLAIMED="$(mktemp)"; trap 'rm -f "$CLAIMED"' EXIT
+copy_agents() {  # copy_agents <glob...> -- earlier calls win on same-named agents
+  local f b
+  for f in "$@"; do
+    b="$(basename "$f")"
+    [ "$b" = README.md ] && continue
+    grep -qxF "$b" "$CLAIMED" && continue
+    echo "$b" >> "$CLAIMED"
+    copy_new "$f" "$AGENTS"
+  done
+}
 
-echo "== Agents: VoltAgent/awesome-claude-code-subagents (~161, tool-restricted) =="
+echo "== Agents: VoltAgent/awesome-claude-code-subagents (~161, tool-restricted; wins on name clashes) =="
 sync_repo https://github.com/VoltAgent/awesome-claude-code-subagents "$VENDOR/voltagent-subagents"
-for f in "$VENDOR"/voltagent-subagents/categories/*/*.md; do
-  [ "$(basename "$f")" = README.md ] && continue
-  copy_new "$f" "$AGENTS"   # same-named agents already installed are kept, not overwritten
-done
+copy_agents "$VENDOR"/voltagent-subagents/categories/*/*.md
+
+echo "== Agents: weaponslab/claude-agents (83; only names VoltAgent doesn't have) =="
+sync_repo https://github.com/weaponslab/claude-agents "$VENDOR/weaponslab-claude-agents"
+copy_agents "$VENDOR"/weaponslab-claude-agents/*.md
 
 if [ "$SKIP_AGENCY" -eq 0 ]; then
   echo "== Agents: msitarzewski/agency-agents (engineering, security, marketing) =="
