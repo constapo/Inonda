@@ -33,6 +33,13 @@ for f in "$VENDOR"/weaponslab-claude-agents/*.md; do
   copy_new "$f" "$AGENTS"
 done
 
+echo "== Agents: VoltAgent/awesome-claude-code-subagents (~161, tool-restricted) =="
+sync_repo https://github.com/VoltAgent/awesome-claude-code-subagents "$VENDOR/voltagent-subagents"
+for f in "$VENDOR"/voltagent-subagents/categories/*/*.md; do
+  [ "$(basename "$f")" = README.md ] && continue
+  copy_new "$f" "$AGENTS"   # same-named agents already installed are kept, not overwritten
+done
+
 if [ "$SKIP_AGENCY" -eq 0 ]; then
   echo "== Agents: msitarzewski/agency-agents (engineering, security, marketing) =="
   sync_repo https://github.com/msitarzewski/agency-agents "$VENDOR/agency-agents"
