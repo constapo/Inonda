@@ -5,3 +5,6 @@
 .claude-flow/data/
 .claude-flow/logs/
 .claude-flow/sessions/
+
+# anchor-memory auto-saved session state
+.anchor/
