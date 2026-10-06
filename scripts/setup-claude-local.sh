@@ -75,12 +75,13 @@ if [ "$SKIP_SKILLS" -eq 0 ]; then
   sync_repo https://github.com/ruvnet/ruflo "$VENDOR/ruflo"
   mkdir -p "$SKILLS/ruflo"; [ -e "$SKILLS/ruflo/SKILL.md" ] || cp "$VENDOR/ruflo/SKILL.md" "$SKILLS/ruflo/SKILL.md"
 
-  echo "== Skills: guarded-provider-routing (from constapo/Inonda) =="
+  echo "== Skills: guarded-provider-routing (from constapo/Inonda, main) =="
   sync_repo https://github.com/constapo/Inonda "$VENDOR/inonda"
-  git -C "$VENDOR/inonda" fetch -q origin claude/install-claude-code-tool-vxzynm --depth 1 || true
-  git -C "$VENDOR/inonda" checkout -q FETCH_HEAD -- .claude/skills/guarded-provider-routing 2>/dev/null \
-    && copy_new "$VENDOR/inonda/.claude/skills/guarded-provider-routing" "$SKILLS" \
-    || echo "  (could not fetch guarded-provider-routing; branch may be merged/renamed)"
+  if [ -d "$VENDOR/inonda/.claude/skills/guarded-provider-routing" ]; then
+    copy_new "$VENDOR/inonda/.claude/skills/guarded-provider-routing" "$SKILLS"
+  else
+    echo "  (guarded-provider-routing not found on main; skipping)"
+  fi
 fi
 
 cat <<'EOF'
