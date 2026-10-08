@@ -42,3 +42,5 @@ Inonda LTD house rules for every finished video:
   description, chapters and tags like `docs/video-ad/youtube.md`. The user uploads
   the file in YouTube Studio; after that, metadata can be set with vidIQ
   `vidiq_update_video` once that channel is connected to vidIQ.
+- Links: always include https://inonda.site and https://inonda.org
+  (add https://inonda.homes once it is live).

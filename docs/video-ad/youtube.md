@@ -38,7 +38,7 @@ We are a local property management team based in Nicosia, serving owners, invest
 Manager: +357 94 091 616
 Technician: +357 94 091 613
 Email: inonda2026@outlook.com
-Website: https://inonda.kleap.io/
+Websites: https://inonda.site · https://inonda.org
 
 ⏱️ CHAPTERS
 0:00 Inonda LTD — property care in Cyprus

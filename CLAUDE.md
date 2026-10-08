@@ -12,6 +12,21 @@
 - Keep files under 500 lines
 - Validate input at system boundaries
 
+## Inonda LTD — company facts (remember across sessions)
+
+- Business: property maintenance and repairs, Nicosia and all of Cyprus. No rent
+  collection or monthly financial statements (discontinued); never mention repair prices.
+- Websites (use both in every video description, ad and link list):
+  https://inonda.site and https://inonda.org
+- Coming soon: https://inonda.homes — new site we are designing and building together
+  with the user; add it to links once it is live.
+- YouTube channel: https://www.youtube.com/channel/UCjSe6BKPjv-hwJ24y2ikIBg
+  (connected via vidIQ; the user uploads in YouTube Studio, then set metadata with
+  `vidiq_update_video`).
+- Every finished video carries the logo watermark `docs/video-ad/logo-badge.png`
+  top-left (`overlay=36:36` on 1920x1080).
+- Contact: +357 94 091 616 (Manager), +357 94 091 613 (Technician), inonda2026@outlook.com
+
 ## Ruflo Capability Brain & Implementation Loop
 
 Ruflo is the coordination ledger and policy decision point. Claude Code is the
