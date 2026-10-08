@@ -82,15 +82,15 @@
 
 **Εικόνα (prompt):** Inspector walking room by room through an apartment with a tablet checklist, photographing walls, windows and appliances; a multi-page PDF report with date-stamped photos
 
-## 11. Επιπλέον υπηρεσίες  (00:02:29–00:02:41, ~12s)
+## 11. Επιπλέον υπηρεσίες  (00:02:29–00:02:38, ~9s)
 
-**English narration (read this):** We also offer cleaning and turnover between tenants, tenant screening, lease preparation, rent collection, and a clear monthly financial statement with every euro of income and expenses itemized.
+**English narration (read this):** We also offer cleaning and turnover between tenants, tenant screening, lease preparation, rent collection, and a clear monthly financial statement.
 
-**Ελληνικοί υπότιτλοι:** Προσφέρουμε επίσης καθαρισμό και προετοιμασία του ακινήτου ανάμεσα σε ενοικιαστές, έλεγχο και επιλογή ενοικιαστών, σύνταξη μισθωτηρίου, είσπραξη ενοικίων, και σαφή μηνιαία οικονομική κατάσταση, με κάθε ευρώ εσόδων και εξόδων αναλυτικά.
+**Ελληνικοί υπότιτλοι:** Προσφέρουμε επίσης καθαρισμό και προετοιμασία του ακινήτου ανάμεσα σε ενοικιαστές, έλεγχο και επιλογή ενοικιαστών, σύνταξη μισθωτηρίου, είσπραξη ενοικίων, και σαφή μηνιαία οικονομική κατάσταση.
 
 **Εικόνα (prompt):** Quick montage: professional cleaning of an empty apartment after move-out, keys handed to new tenants, owner reading a clear monthly financial statement on a laptop
 
-## 12. Τα οφέλη σας  (00:02:42–00:02:56, ~14s)
+## 12. Τα οφέλη σας  (00:02:38–00:02:52, ~14s)
 
 **English narration (read this):** The result? A property that stays in great shape thanks to preventive care, faster response for your tenants, fewer vacancies, and real peace of mind that your property is in good hands.
 
@@ -98,7 +98,7 @@
 
 **Εικόνα (prompt):** Relaxed property owner on a balcony with a coffee looking at a well-kept building at sunset; satisfied tenant waving
 
-## 13. Επικοινωνία  (00:02:56–00:03:13, ~17s)
+## 13. Επικοινωνία  (00:02:53–00:03:10, ~17s)
 
 **English narration (read this):** Request your free property assessment and a no-obligation quote today. Call us on plus three five seven, nine four, zero nine one, six one six, or email inonda2026 at outlook dot com. Inonda LTD. Your property, without the stress.
 
