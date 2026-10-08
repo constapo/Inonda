@@ -50,8 +50,8 @@
  {
   "scene": "9. Επιλογές για εσάς",
   "visual": "Clean animated title cards over soft footage of Cyprus homes: 'Επιλογή 1 – Επισκευή όταν τη χρειάζεστε', 'Επιλογή 2 – Προληπτική & εποχική συντήρηση', 'Επιλογή 3 – Πλήρης διαχείριση ακινήτου'",
-  "text": "Πώς μπορούμε να συνεργαστούμε; Πρώτη επιλογή: μας καλείτε όταν χρειάζεστε μια επισκευή, επείγουσα ή απλή. Δεύτερη επιλογή: προληπτική και εποχική συντήρηση, ώστε το ακίνητο να είναι πάντα σε καλή κατάσταση. Τρίτη επιλογή: πλήρης διαχείριση, όπου αναλαμβάνουμε τη συντήρηση, τις επιθεωρήσεις, την εύρεση ενοικιαστών και την οικονομική αναφορά.",
-  "en": "How can we work together? Option one: call us whenever you need a repair, urgent or simple. Option two: preventive and seasonal maintenance, so your property stays in great condition. Option three: full property management, where we take care of maintenance, inspections, finding tenants and financial reporting."
+  "text": "Πώς μπορούμε να συνεργαστούμε; Πρώτη επιλογή: μας καλείτε όταν χρειάζεστε μια επισκευή, επείγουσα ή απλή. Δεύτερη επιλογή: προληπτική και εποχική συντήρηση, ώστε το ακίνητο να είναι πάντα σε καλή κατάσταση. Τρίτη επιλογή: πλήρης διαχείριση, όπου αναλαμβάνουμε τη συντήρηση, τις επιθεωρήσεις και την εύρεση ενοικιαστών.",
+  "en": "How can we work together? Option one: call us whenever you need a repair, urgent or simple. Option two: preventive and seasonal maintenance, so your property stays in great condition. Option three: full property management, where we take care of maintenance, inspections and finding tenants."
  },
  {
   "scene": "10. Επιθεωρήσεις",
@@ -61,9 +61,9 @@
  },
  {
   "scene": "11. Επιπλέον υπηρεσίες",
-  "visual": "Quick montage: professional cleaning of an empty apartment after move-out, keys handed to new tenants, owner reading a clear monthly financial statement on a laptop",
-  "text": "Προσφέρουμε επίσης καθαρισμό και προετοιμασία του ακινήτου ανάμεσα σε ενοικιαστές, έλεγχο και επιλογή ενοικιαστών, σύνταξη μισθωτηρίου, είσπραξη ενοικίων, και σαφή μηνιαία οικονομική κατάσταση.",
-  "en": "We also offer cleaning and turnover between tenants, tenant screening, lease preparation, rent collection, and a clear monthly financial statement."
+  "visual": "Quick montage: professional cleaning of an empty apartment after move-out, keys handed to new tenants",
+  "text": "Προσφέρουμε επίσης καθαρισμό και προετοιμασία του ακινήτου ανάμεσα σε ενοικιαστές, έλεγχο και επιλογή ενοικιαστών, και σύνταξη μισθωτηρίου.",
+  "en": "We also offer cleaning and turnover between tenants, tenant screening, and lease preparation."
  },
  {
   "scene": "12. Τα οφέλη σας",

@@ -1,6 +1,6 @@
 # Inonda.LTD — διαφημιστικό βίντεο (σενάριο)
 
-Συνολική διάρκεια: ~3.2 λεπτά
+Συνολική διάρκεια: ~3.1 λεπτά
 
 ## 1. Άνοιγμα  (00:00:00–00:00:13, ~13s)
 
@@ -66,15 +66,15 @@
 
 **Εικόνα (prompt):** Technician photographing a finished repair with a phone; split screen of before and after photos appearing in a clean report
 
-## 9. Επιλογές για εσάς  (00:01:49–00:02:10, ~20s)
+## 9. Επιλογές για εσάς  (00:01:49–00:02:09, ~20s)
 
-**English narration (read this):** How can we work together? Option one: call us whenever you need a repair, urgent or simple. Option two: preventive and seasonal maintenance, so your property stays in great condition. Option three: full property management, where we take care of maintenance, inspections, finding tenants and financial reporting.
+**English narration (read this):** How can we work together? Option one: call us whenever you need a repair, urgent or simple. Option two: preventive and seasonal maintenance, so your property stays in great condition. Option three: full property management, where we take care of maintenance, inspections and finding tenants.
 
-**Ελληνικοί υπότιτλοι:** Πώς μπορούμε να συνεργαστούμε; Πρώτη επιλογή: μας καλείτε όταν χρειάζεστε μια επισκευή, επείγουσα ή απλή. Δεύτερη επιλογή: προληπτική και εποχική συντήρηση, ώστε το ακίνητο να είναι πάντα σε καλή κατάσταση. Τρίτη επιλογή: πλήρης διαχείριση, όπου αναλαμβάνουμε τη συντήρηση, τις επιθεωρήσεις, την εύρεση ενοικιαστών και την οικονομική αναφορά.
+**Ελληνικοί υπότιτλοι:** Πώς μπορούμε να συνεργαστούμε; Πρώτη επιλογή: μας καλείτε όταν χρειάζεστε μια επισκευή, επείγουσα ή απλή. Δεύτερη επιλογή: προληπτική και εποχική συντήρηση, ώστε το ακίνητο να είναι πάντα σε καλή κατάσταση. Τρίτη επιλογή: πλήρης διαχείριση, όπου αναλαμβάνουμε τη συντήρηση, τις επιθεωρήσεις και την εύρεση ενοικιαστών.
 
 **Εικόνα (prompt):** Clean animated title cards over soft footage of Cyprus homes: 'Επιλογή 1 – Επισκευή όταν τη χρειάζεστε', 'Επιλογή 2 – Προληπτική & εποχική συντήρηση', 'Επιλογή 3 – Πλήρης διαχείριση ακινήτου'
 
-## 10. Επιθεωρήσεις  (00:02:10–00:02:28, ~18s)
+## 10. Επιθεωρήσεις  (00:02:09–00:02:28, ~18s)
 
 **English narration (read this):** Our inspections give you a true picture: move-in and move-out inspections, routine checks every quarter or every six months, quick visits to vacant properties, and a full annual inspection. You receive a detailed report with photos, a room-by-room checklist, and recommended repairs.
 
@@ -82,15 +82,15 @@
 
 **Εικόνα (prompt):** Inspector walking room by room through an apartment with a tablet checklist, photographing walls, windows and appliances; a multi-page PDF report with date-stamped photos
 
-## 11. Επιπλέον υπηρεσίες  (00:02:29–00:02:38, ~9s)
+## 11. Επιπλέον υπηρεσίες  (00:02:28–00:02:34, ~6s)
 
-**English narration (read this):** We also offer cleaning and turnover between tenants, tenant screening, lease preparation, rent collection, and a clear monthly financial statement.
+**English narration (read this):** We also offer cleaning and turnover between tenants, tenant screening, and lease preparation.
 
-**Ελληνικοί υπότιτλοι:** Προσφέρουμε επίσης καθαρισμό και προετοιμασία του ακινήτου ανάμεσα σε ενοικιαστές, έλεγχο και επιλογή ενοικιαστών, σύνταξη μισθωτηρίου, είσπραξη ενοικίων, και σαφή μηνιαία οικονομική κατάσταση.
+**Ελληνικοί υπότιτλοι:** Προσφέρουμε επίσης καθαρισμό και προετοιμασία του ακινήτου ανάμεσα σε ενοικιαστές, έλεγχο και επιλογή ενοικιαστών, και σύνταξη μισθωτηρίου.
 
-**Εικόνα (prompt):** Quick montage: professional cleaning of an empty apartment after move-out, keys handed to new tenants, owner reading a clear monthly financial statement on a laptop
+**Εικόνα (prompt):** Quick montage: professional cleaning of an empty apartment after move-out, keys handed to new tenants
 
-## 12. Τα οφέλη σας  (00:02:38–00:02:52, ~14s)
+## 12. Τα οφέλη σας  (00:02:34–00:02:48, ~14s)
 
 **English narration (read this):** The result? A property that stays in great shape thanks to preventive care, faster response for your tenants, fewer vacancies, and real peace of mind that your property is in good hands.
 
@@ -98,7 +98,7 @@
 
 **Εικόνα (prompt):** Relaxed property owner on a balcony with a coffee looking at a well-kept building at sunset; satisfied tenant waving
 
-## 13. Επικοινωνία  (00:02:53–00:03:10, ~17s)
+## 13. Επικοινωνία  (00:02:49–00:03:06, ~17s)
 
 **English narration (read this):** Request your free property assessment and a no-obligation quote today. Call us on plus three five seven, nine four, zero nine one, six one six, or email inonda2026 at outlook dot com. Inonda LTD. Your property, without the stress.
 
