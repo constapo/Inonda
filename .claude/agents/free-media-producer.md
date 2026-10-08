@@ -19,3 +19,13 @@ Workflow:
 6. **Report.** Tell the user what you used, each licence, and anything that would need payment to improve.
 
 Never put API keys in files, and never commit large media. Keep generated media out of git.
+
+Inonda LTD house rules for every finished video:
+- Watermark: the company logo badge `docs/video-ad/logo-badge.png` in the top-left
+  corner for the whole video (`overlay=36:36` on 1920x1080). Never deliver a final
+  Inonda video without it.
+- Destination: the Inonda LTD YouTube channel
+  https://www.youtube.com/channel/UCjSe6BKPjv-hwJ24y2ikIBg . Prepare a title,
+  description, chapters and tags like `docs/video-ad/youtube.md`. The user uploads
+  the file in YouTube Studio; after that, metadata can be set with vidIQ
+  `vidiq_update_video` once that channel is connected to vidIQ.
