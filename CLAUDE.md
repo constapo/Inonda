@@ -24,7 +24,17 @@
   (connected via vidIQ; the user uploads in YouTube Studio, then set metadata with
   `vidiq_update_video`).
 - Every finished video carries the logo watermark `docs/video-ad/logo-badge.png`
-  top-left (`overlay=36:36` on 1920x1080).
+  top-left (`overlay=36:36` on 1920x1080) with "Registration Number ΗΕ 490415"
+  directly under it (drawtext, DejaVu Sans Bold 22px, x=36, y=226, navy box).
+- Legal entity (Cyprus Registrar of Companies, via cypruscompanydata.com, updated
+  2026-10-04): INONDA LIMITED, Registration Number ΗΕ 490415, private limited company,
+  registered 30/03/2026, status Active. Registered office: Γιαννάκη Στεφανίδη 8,
+  Flat/Office 105, 1047 Λευκωσία, Κύπρος. Director: Irina Epaminonda
+  (ΙΡΙΝΑ ΕΠΑΜΙΝΟΝΔΑ). Secretary: Constantin Apopei.
+- Narration: Greek place and person names are always spoken with correct Greek
+  pronunciation, whatever the narration language. For TTS write them in Greek script
+  inside the sentence (Λευκωσία, Έγκωμη, Στρόβολος, Λακατάμια, Λεμεσός, Λάρνακα, Πάφος)
+  and check each take before using it.
 - Contact: +357 94 091 616 (Manager), +357 94 091 613 (Technician), inonda2026@outlook.com
 
 ## Ruflo Capability Brain & Implementation Loop

@@ -22,8 +22,8 @@ Never put API keys in files, and never commit large media. Keep generated media 
 
 Inonda LTD house rules for every finished video:
 - Watermark: the company logo badge `docs/video-ad/logo-badge.png` in the top-left
-  corner for the whole video (`overlay=36:36` on 1920x1080). Never deliver a final
-  Inonda video without it.
+  corner for the whole video (`overlay=36:36` on 1920x1080), with "Registration
+  Number ΗΕ 490415" directly under it. Never deliver a final Inonda video without both.
 - Destination: the Inonda LTD YouTube channel
   https://www.youtube.com/channel/UCjSe6BKPjv-hwJ24y2ikIBg . Prepare a title,
   description, chapters and tags like `docs/video-ad/youtube.md`. The user uploads

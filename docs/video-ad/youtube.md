@@ -1,6 +1,6 @@
 # YouTube upload — Inonda LTD ad
 
-File to upload: `docs/video-ad/out/inonda-ad-final.mp4` (1080p, 3:08)
+File to upload: `docs/video-ad/out/inonda-ad-final.mp4` (1080p, 3:10)
 Subtitles (optional, Subtitles tab → Greek → Upload file): `docs/video-ad/out/subtitles.el.srt`
 Thumbnail: a frame from the intro title shot (0:01) works well.
 
@@ -43,20 +43,21 @@ Websites: https://inonda.site · https://inonda.org
 ⏱️ CHAPTERS
 0:00 Inonda LTD — property care in Cyprus
 0:16 Who we are
-0:36 Maintenance & repairs
-0:50 24/7 emergency response
-1:05 Preventive & seasonal maintenance
-1:24 Your approval & photo reports
-1:44 Three ways to work together
-2:05 Property inspections
-2:25 More services & the result
-2:45 Free property assessment
+0:38 Maintenance & repairs
+0:53 24/7 emergency response
+1:07 Preventive & seasonal maintenance
+1:26 Your approval & photo reports
+1:47 Three ways to work together
+2:07 Property inspections
+2:28 More services & the result
+2:47 Free property assessment
 
 —
 
 🇬🇷 Έχετε ακίνητο στην Κύπρο; Η Inonda LTD, με έδρα τη Λευκωσία, φροντίζει για τη συντήρηση και τις επισκευές του ακινήτου σας σε όλη την Κύπρο: άμεση ανταπόκριση 24/7 σε έκτακτα περιστατικά, προληπτικούς ελέγχους σε κλιματισμό, υδραυλικά και ηλεκτρολογικά, εποχική προετοιμασία, επιθεωρήσεις με φωτογραφίες και αναφορές, καθαρισμό μεταξύ ενοικιαστών, έλεγχο ενοικιαστών και σύνταξη μισθωτηρίων. Καμία εργασία χωρίς τη δική σας έγκριση.
 Ζητήστε σήμερα δωρεάν αξιολόγηση ακινήτου: +357 94 091 616 · inonda2026@outlook.com
 
+INONDA LIMITED · Registration Number ΗΕ 490415
 Inonda LTD — Your property, without the stress.
 
 #Cyprus #PropertyManagement #Nicosia
