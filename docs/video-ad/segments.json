@@ -26,8 +26,8 @@
  {
   "scene": "5. Προληπτική συντήρηση",
   "visual": "Technician cleaning an air-conditioning split unit filter, checking plumbing pressure, testing electrical sockets with a meter; bright daytime, calm and methodical",
-  "text": "Η πρόληψη κοστίζει λιγότερο από τη βλάβη. Κάνουμε τακτικούς ελέγχους στα κλιματιστικά, στις υδραυλικές και στις ηλεκτρολογικές εγκαταστάσεις, για να εντοπίζουμε τα προβλήματα πριν γίνουν ακριβά.",
-  "en": "Prevention costs less than repair. We carry out routine checks on air conditioning, plumbing and electrical systems, to catch problems before they become expensive."
+  "text": "Η πρόληψη είναι καλύτερη από τη βλάβη. Κάνουμε τακτικούς ελέγχους στα κλιματιστικά, στις υδραυλικές και στις ηλεκτρολογικές εγκαταστάσεις, για να εντοπίζουμε τα προβλήματα νωρίς, πριν γίνουν σοβαρά.",
+  "en": "Prevention is better than repair. We carry out routine checks on air conditioning, plumbing and electrical systems, to catch problems early, before they become serious."
  },
  {
   "scene": "6. Εποχική προετοιμασία",
@@ -37,9 +37,9 @@
  },
  {
   "scene": "7. Προσφορά & έγκριση",
-  "visual": "Owner abroad (in a European apartment) receiving a repair cost estimate on a smartphone and tapping 'Approve'; cut to technician starting the work in Cyprus",
-  "text": "Πριν ξεκινήσει οποιαδήποτε εργασία, σας στέλνουμε εκτίμηση κόστους και περιμένουμε την έγκρισή σας. Δουλεύουμε μόνο με αδειούχους και ασφαλισμένους τεχνικούς. Χωρίς εκπλήξεις, χωρίς κρυφές χρεώσεις.",
-  "en": "Before any work begins, we send you a cost estimate and wait for your approval. We work only with licensed and insured contractors. No surprises, no hidden charges."
+  "visual": "Owner abroad reviewing a repair plan on a smartphone and tapping approve; cut to licensed technician starting the work in Cyprus",
+  "text": "Πριν ξεκινήσει οποιαδήποτε εργασία, σας εξηγούμε ακριβώς τι χρειάζεται να γίνει και περιμένουμε την έγκρισή σας. Δουλεύουμε μόνο με αδειούχους και ασφαλισμένους τεχνικούς, και τίποτα δεν γίνεται χωρίς τη δική σας συγκατάθεση.",
+  "en": "Before any work begins, we explain exactly what needs to be done and wait for your approval. We work only with licensed and insured contractors, and nothing is done without your consent."
  },
  {
   "scene": "8. Φωτογραφική τεκμηρίωση",
@@ -56,8 +56,8 @@
  {
   "scene": "10. Επιθεωρήσεις",
   "visual": "Inspector walking room by room through an apartment with a tablet checklist, photographing walls, windows and appliances; a multi-page PDF report with date-stamped photos",
-  "text": "Με τις επιθεωρήσεις μας έχετε πάντα πραγματική εικόνα: επιθεώρηση εισόδου και εξόδου ενοικιαστή, τακτικούς ελέγχους κάθε τρίμηνο ή εξάμηνο, σύντομες επισκέψεις σε κενά ακίνητα, και ετήσια πλήρη επιθεώρηση. Λαμβάνετε αναλυτική αναφορά με φωτογραφίες, έλεγχο ανά δωμάτιο και προτάσεις επισκευών με εκτίμηση κόστους.",
-  "en": "Our inspections give you a true picture: move-in and move-out inspections, routine checks every quarter or every six months, quick visits to vacant properties, and a full annual inspection. You receive a detailed report with photos, a room-by-room checklist, and recommended repairs with estimated costs."
+  "text": "Με τις επιθεωρήσεις μας έχετε πάντα πραγματική εικόνα: επιθεώρηση εισόδου και εξόδου ενοικιαστή, τακτικούς ελέγχους κάθε τρίμηνο ή εξάμηνο, σύντομες επισκέψεις σε κενά ακίνητα, και ετήσια πλήρη επιθεώρηση. Λαμβάνετε αναλυτική αναφορά με φωτογραφίες, έλεγχο ανά δωμάτιο και προτεινόμενες επισκευές.",
+  "en": "Our inspections give you a true picture: move-in and move-out inspections, routine checks every quarter or every six months, quick visits to vacant properties, and a full annual inspection. You receive a detailed report with photos, a room-by-room checklist, and recommended repairs."
  },
  {
   "scene": "11. Επιπλέον υπηρεσίες",
@@ -68,8 +68,8 @@
  {
   "scene": "12. Τα οφέλη σας",
   "visual": "Relaxed property owner on a balcony with a coffee looking at a well-kept building at sunset; satisfied tenant waving",
-  "text": "Το αποτέλεσμα; Χαμηλότερο κόστος επισκευών μακροπρόθεσμα, γρηγορότερη εξυπηρέτηση των ενοικιαστών, λιγότερες κενές περίοδοι, και πραγματική ησυχία ότι το ακίνητό σας είναι σε καλά χέρια.",
-  "en": "The result? Lower long-term repair costs, faster response for your tenants, fewer vacancies, and real peace of mind that your property is in good hands."
+  "text": "Το αποτέλεσμα; Ένα ακίνητο που παραμένει σε άριστη κατάσταση χάρη στην προληπτική φροντίδα, γρηγορότερη εξυπηρέτηση των ενοικιαστών, λιγότερες κενές περίοδοι, και πραγματική ησυχία ότι το ακίνητό σας είναι σε καλά χέρια.",
+  "en": "The result? A property that stays in great shape thanks to preventive care, faster response for your tenants, fewer vacancies, and real peace of mind that your property is in good hands."
  },
  {
   "scene": "13. Επικοινωνία",
