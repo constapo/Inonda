@@ -127,7 +127,9 @@ def main():
     wavs.append(intro_wav)
     t = INTRO["dur"]
     for s, (seg, shots) in enumerate(zip(segs, plan)):
-        mp3 = AD / "voice" / f"{s + 1:02}.mp3"
+        # your own voice (NN.wav / NN.m4a) wins over the AI narration (NN.mp3)
+        mp3 = next(p for p in (AD / "voice" / f"{s + 1:02}.{e}" for e in ("wav", "m4a", "mp3"))
+                   if p.exists())
         dur = duration(mp3)
         last = s == len(plan) - 1
         hold = TAIL if last else GAP

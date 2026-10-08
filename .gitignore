@@ -13,3 +13,4 @@
 docs/video-ad/build/
 docs/video-ad/out/
 docs/video-ad/voice/
+scripts/video-ad/__pycache__/

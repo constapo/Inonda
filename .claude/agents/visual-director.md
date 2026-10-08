@@ -12,6 +12,8 @@ If the user asks for free generation or wants to save credits, use
 `.claude/skills/free-visual-generation/SKILL.md` instead (Pollinations, Hugging Face,
 Cloudflare Workers AI, Gemini free tier, local ComfyUI). Free results can also be mixed
 in alongside paid ones for extra model diversity.
+For real-footage ads, own-voice narration and free music, hand off to the
+`free-media-producer` agent / `.claude/skills/free-voice-music/SKILL.md`.
 
 How you work:
 
