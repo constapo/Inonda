@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SEGMENTS = ROOT / "docs/video-ad/segments.json"
 OUT_DIR = ROOT / "docs/video-ad"
-WORDS_PER_SEC = 2.2   # calm Greek advertising narration
+WORDS_PER_SEC = 2.3   # calm English advertising narration
 GAP = 0.6             # pause between scenes, seconds
 MAX_CHARS = 84        # two lines of ~42 chars
 
@@ -60,6 +60,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--durations", nargs="*", type=float,
                     help="real spoken length of each scene in seconds")
+    ap.add_argument("--gap", type=float, default=GAP,
+                    help="pause inserted after each scene, seconds")
+    ap.add_argument("--out", type=Path, default=OUT_DIR / "subtitles.el.srt")
     args = ap.parse_args()
 
     segs = json.loads(SEGMENTS.read_text(encoding="utf-8"))
@@ -73,7 +76,7 @@ def main():
         shown = spoken
         for k, v in WRITTEN.items():
             shown = shown.replace(k, v)
-        words = len(spoken.split())
+        words = len(seg.get("en", spoken).split())
         dur = args.durations[i] if args.durations else words / WORDS_PER_SEC
         pieces = chunks(shown)
         total = sum(len(p) for p in pieces)
@@ -84,13 +87,15 @@ def main():
             idx += 1
             t += d
         md.append(f"## {seg['scene']}  ({ts(start)[:8]}–{ts(t)[:8]}, ~{dur:.0f}s)\n")
-        md.append(f"**Αφήγηση:** {spoken}\n")
+        md.append(f"**English narration (read this):** {seg.get('en', '')}\n")
+        md.append(f"**Ελληνικοί υπότιτλοι:** {shown}\n")
         md.append(f"**Εικόνα (prompt):** {seg['visual']}\n")
-        t += GAP
+        t += args.gap
 
     md.insert(1, f"Συνολική διάρκεια: ~{t / 60:.1f} λεπτά\n")
-    (OUT_DIR / "subtitles.el.srt").write_text("\n".join(srt), encoding="utf-8")
-    (OUT_DIR / "script.md").write_text("\n".join(md), encoding="utf-8")
+    args.out.write_text("\n".join(srt), encoding="utf-8")
+    if not args.durations:
+        (OUT_DIR / "script.md").write_text("\n".join(md), encoding="utf-8")
     print(f"scenes={len(segs)} subtitles={idx - 1} total={t:.1f}s ({t / 60:.2f} min)")
 
 

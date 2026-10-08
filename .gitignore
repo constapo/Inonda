@@ -8,3 +8,8 @@
 
 # anchor-memory auto-saved session state
 .anchor/
+
+# video-ad render outputs
+docs/video-ad/build/
+docs/video-ad/out/
+docs/video-ad/voice/
