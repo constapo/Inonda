@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Inonda YouTube banner, 2560x1440; text kept inside the 1546x423 mobile-safe area. bg.png = frame 3s of Adobe Stock clip 1513585409; logo.png = docs/video-ad/logo.png. Render with Playwright at 2560x1440. -->
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Figtree:wght@500;600;700;800&display=block" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{width:2560px;height:1440px;overflow:hidden;background:#0b1f3a;font-family:Figtree,Inter,sans-serif}
+.bg{position:absolute;inset:0;background:url(bg.png) center 58%/cover;filter:saturate(1.08) contrast(1.04)}
+.shade{position:absolute;inset:0;background:
+ linear-gradient(90deg,rgba(8,24,52,.96) 0%,rgba(8,24,52,.93) 32%,rgba(8,24,52,.82) 52%,rgba(8,24,52,.4) 72%,rgba(8,24,52,.08) 100%),
+ linear-gradient(180deg,rgba(8,24,52,.55) 0%,rgba(8,24,52,0) 30%,rgba(8,24,52,0) 70%,rgba(8,24,52,.6) 100%)}
+.accent{position:absolute;left:0;right:0;top:1004px;height:6px;background:linear-gradient(90deg,#2563eb,#38bdf8 45%,rgba(56,189,248,0) 75%)}
+.safe{position:absolute;left:507px;top:509px;width:1546px;height:423px;display:flex;align-items:center;gap:56px}
+.badge{flex:none;width:250px;height:250px;background:#fff;border-radius:36px;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.badge img{width:205px}
+.txt{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.name{font-family:'Instrument Serif',serif;font-size:128px;line-height:.95;letter-spacing:.5px}
+.name span{color:#7cc4ff}
+.tag{font-weight:700;font-size:50px;margin-top:14px;letter-spacing:.3px}
+.gr{font-family:Inter,sans-serif;font-weight:500;font-size:33px;color:#cfe3ff;margin-top:10px}
+.row{display:flex;gap:16px;margin-top:26px;align-items:center}
+.chip{text-shadow:none;font-weight:600;font-size:27px;padding:10px 22px;border-radius:999px;background:rgba(37,99,235,.9);color:#fff}
+.chip.o{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.35)}
+.web{margin-left:14px;font-weight:700;font-size:30px;color:#fff}
+.web b{color:#7cc4ff;font-weight:700}
+</style></head><body>
+<div class="bg"></div><div class="shade"></div><div class="accent"></div>
+<div class="safe">
+ <div class="badge"><img src="logo.png"></div>
+ <div class="txt">
+  <div class="name">Inonda <span>LTD</span></div>
+  <div class="tag">Property Maintenance &amp; Repairs in Cyprus</div>
+  <div class="gr">Συντήρηση &amp; επισκευές ακινήτων · Λευκωσία &amp; όλη η Κύπρος</div>
+  <div class="row"><span class="chip">24/7 Emergency</span><span class="chip o">Preventive care</span><span class="chip o">Inspections</span>
+   <span class="web">inonda.site <b>·</b> inonda.org</span></div>
+ </div>
+</div>
+</body></html>
