@@ -4,6 +4,6 @@ compatibility_date = "2025-01-01"
 
 # Non-secret config. Replace with your real site origins (comma separated, no trailing slash).
 [vars]
-ALLOWED_ORIGINS = "https://inonda.example"
+ALLOWED_ORIGINS = "https://royal-lake-2fec.constapo.workers.dev"
 
 # Secret (do not put in this file):  npx wrangler secret put LEAD_WEBHOOK_URL

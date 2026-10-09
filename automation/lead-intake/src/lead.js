@@ -27,7 +27,13 @@ export function classify(text) {
 export function validate(input) {
   const errors = [];
   const v = (k) => String(input?.[k] ?? "").trim();
-  const lead = { name: v("name"), email: v("email").toLowerCase(), phone: v("phone"), subject: v("subject"), message: v("message") };
+  const extra = {};
+  for (const k of ["address", "type", "units", "occupancy", "topic"]) {
+    const x = v(k).slice(0, 300);
+    if (x) extra[k] = x;
+  }
+  const lead = { name: v("name"), email: v("email").toLowerCase(), phone: v("phone"), subject: v("subject") || extra.topic || "Website enquiry", message: v("message") };
+  if (Object.keys(extra).length) lead.extra = extra;
   if (!lead.name || lead.name.length > 120) errors.push("name");
   if (!EMAIL.test(lead.email) || lead.email.length > 254) errors.push("email");
   if (lead.phone && !/^[+\d][\d\s().-]{5,24}$/.test(lead.phone)) errors.push("phone");

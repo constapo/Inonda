@@ -11,6 +11,13 @@ const env = { ALLOWED_ORIGINS: "https://inonda.test", LEAD_WEBHOOK_URL: "https:/
 test("validate accepts good lead, normalises email", () => {
   const r = validate(good); assert.ok(r.ok); assert.equal(r.lead.email, "anna@example.com");
 });
+test("subject optional: falls back to topic, keeps extra property fields", () => {
+  const { subject, ...noSubject } = good;
+  const r = validate({ ...noSubject, topic: "Free property assessment", address: "Nicosia", type: "Apartment", units: "2" });
+  assert.ok(r.ok); assert.equal(r.lead.subject, "Free property assessment");
+  assert.deepEqual(r.lead.extra, { address: "Nicosia", type: "Apartment", units: "2", topic: "Free property assessment" });
+  assert.equal(validate(noSubject).lead.subject, "Website enquiry");
+});
 test("validate rejects bad email, header injection", () => {
   assert.deepEqual(validate({ ...good, email: "nope" }).errors, ["email"]);
   assert.ok(validate({ ...good, subject: "hi\r\nBcc: x@y.z" }).errors.includes("newline"));
