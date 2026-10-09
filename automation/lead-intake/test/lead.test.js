@@ -24,7 +24,7 @@ test("language detection and intent", () => {
   assert.equal(detectLanguage("שלום"), "he"); assert.equal(detectLanguage("Καλημέρα"), "el");
   assert.equal(detectLanguage("Привіт, їжак"), "uk"); assert.equal(detectLanguage("Привет"), "ru");
   assert.equal(detectLanguage("hello", "ro"), "ro");
-  assert.equal(classify("I am a landlord"), "owner"); assert.equal(classify("there is a leak"), "maintenance");
+  assert.equal(classify("I am a landlord"), "owner"); assert.equal(classify("אני בעלת דירה בניקוסיה"), "owner"); assert.equal(classify("אני בעל דירה"), "owner"); assert.equal(classify("there is a leak"), "maintenance");
 });
 test("reply is localised, RTL for Hebrew", () => {
   const l = enrich(validate({ ...good, name: "דנה", message: "שלום" }).lead, { pageLang: "he" });

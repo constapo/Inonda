@@ -14,7 +14,7 @@ export function detectLanguage(text, pageLang) {
 }
 
 const INTENTS = [
-  ["owner", /landlord|owner|my (property|apartment|house|flat)|manage my|management fee|rental income|ιδιοκτ|בעל דירה|נכס|proprietar|владел|собственик|власник/i],
+  ["owner", /landlord|owner|my (property|apartment|house|flat)|manage my|management fee|rental income|ιδιοκτ|בעל(ת)? (דירה|נכס|בית)|הנכס שלי|נכס|proprietar|владел|собственик|власник/i],
   ["tenant", /tenant|rent (a|an)|looking for (a|an) (flat|apartment|house)|viewing|ενοικιαστ|שוכר|chiriaș|арендатор|снять|орендар/i],
   ["maintenance", /repair|leak|broken|maintenance|plumb|electric|βλάβη|תיקון|reparați|ремонт|протеч/i],
 ];
