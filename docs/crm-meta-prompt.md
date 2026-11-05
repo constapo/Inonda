@@ -233,6 +233,15 @@ reached by the app over a private API. Claude is the lead; open models do the bu
 | Bookkeeper | Rules + OCR (Tesseract / PaddleOCR) + open LLM | Read receipts, categorise, reconcile, flag anomalies | Every ledger change |
 | Analyst | Claude (SQL results passed in, no raw data dumps) | Weekly briefing, decision support | — (read-only) |
 
+**Canva (paid this month, confirmed):** use it as the design tool next to the open
+models. Connect it through the **Canva Connect API** (OAuth). Use it for brand kit,
+templates, designs, exports to PNG/MP4/PDF, and pulling finished designs into the media
+library for the Publisher.
+- Some features, such as Autofill / brand templates by API, need a higher Canva plan
+  [CONFIRM plan].
+- Build it as an optional connector. If the subscription lapses, the open pipeline
+  (FFmpeg + FLUX/SDXL + Piper) keeps working.
+
 ### 4.1b The AI "virtual computer" (self-hosted models)
 - **Separate from Wasmer.** Wasmer Edge cannot run LLMs, so the models run on their own
   cloud VM (Linux).
@@ -404,7 +413,7 @@ Money stored as integer minor units + currency code. All times UTC, shown in use
 2. ~~Who will use the app?~~ Answered: the owner and the requester/operator, both Admin (see section 2).
 3. ~~Which accounts exist?~~ Answered: YouTube, Facebook, Instagram, TikTok and WhatsApp as linked on the sites. More networks are planned (see section 3.3).
 4. ~~Accounting / bank?~~ Answered: own accounting module built from scratch; Eurobank Cyprus connected after the CRM is fully working; online from any device, computer as backup (see sections 3.6 and 5).
-5. ~~AI providers / budget?~~ Answered: Claude is the only paid AI; everything else is open-source, self-hosted on a VM (see 4.1 and 4.1b). Still open: VM provider/budget, and Claude API option A or B.
+5. ~~AI providers / budget?~~ Answered: Claude is the only paid AI, plus Canva (design) this month; everything else is open-source, self-hosted on a VM (see 4.1 and 4.1b). Still open: VM provider/budget, and Claude API option A or B.
 6. Which actions may AI do automatically, and which always need your approval?
 7. Domain for the app (e.g. `app.inonda…`) and do you already have a Wasmer account/team?
 8. Data to import on day one (spreadsheets, old CRM, contact lists)?
