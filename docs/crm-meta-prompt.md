@@ -26,10 +26,11 @@ The app must let the company:
    accounting entries, and support decisions with data.
 4. **Run on Wasmer.io** (Wasmer Edge) as a new app.
 
-Guiding principle: **AI proposes, humans approve.** Nothing that spends money, publishes
-publicly, sends to a client, or touches the books happens without an explicit approval
-step by an authorised person, unless the owner has switched that specific action to
-"auto" in settings.
+Guiding principle (owner decision): **the AI has a broad mandate to grow Inonda's income
+and visibility, locally in Cyprus and internationally, and to help staff make
+decisions.** It acts on its own for growth and routine work. Only actions that commit
+money, create legal obligations or can't be undone wait for a human. See the autonomy
+policy in section 4.2a.
 
 ---
 
@@ -277,6 +278,73 @@ library for the Publisher.
 - **Fallback:** if the VM is down, the app keeps working (CRM, accounting, manual
   publishing) and AI jobs wait in the queue.
 
+### 4.2a Autonomy policy (confirmed: broad mandate for growth)
+Owner instruction: *"do whatever needs to be done for the company to grow its income and
+visibility, locally and internationally, and assist staff on decision making."*
+Three levels, each one switchable per action in Admin:
+
+**Level 1 — Auto** (AI acts, logs it, and reports in the daily digest)
+- Lead handling:
+  - Instant first reply to new leads on WhatsApp, web forms and DMs, in the lead's
+    language.
+  - Ask qualifying questions and create or update the contact, property and deal.
+  - Offer site-visit slots from the shared calendar.
+- Follow-ups:
+  - Follow up quotes with no answer, and ask for reviews after a finished job.
+  - Remind clients about maintenance plans and send seasonal offers (AC servicing
+    before summer, waterproofing before winter). Only to contacts who gave marketing
+    consent.
+- Content and channels:
+  - Plan the content calendar, write, produce and **publish** posts, Reels, Shorts and
+    videos on the connected channels, in all 6 languages.
+  - Reply to comments, answer FAQs, and update profiles and descriptions.
+  - SEO and AEO work: suggestions and drafts for inonda.site, inonda.org and
+    inonda.homes, plus blog or landing pages for new areas and languages.
+- Growth research:
+  - Track competitors and market trends (local and international), and keep target
+    lists for international owners and investors (e.g. buyers from Israel, Romania,
+    Ukraine, Russia, Greece).
+  - Find partner opportunities with estate agents, developers and relocation services.
+- CRM and staff support: data cleanup, deduplication, tagging, lead scoring, task
+  creation for staff, the weekly growth report, and decision briefings with options,
+  numbers and a recommendation.
+- Accounting routine: categorise transactions, match bank lines, send standard
+  invoice-payment reminders, and flag anomalies.
+
+**Level 2 — Auto with an undo window** (AI prepares, waits 2 hours [adjustable], then
+sends unless a human stops it)
+- Sending a quote or proposal that uses the approved price list, with no custom
+  discount.
+- Booking a site visit or job into a technician's calendar.
+- Starting a new marketing campaign or opening a new social channel or profile.
+- Replying to a negative review or a client complaint.
+
+**Level 3 — Always needs explicit human approval**
+- Spending money: ad budgets, subscriptions, purchases, paying suppliers.
+- Prices or discounts outside the approved price list, and any contract, agreement or
+  legal letter.
+- Posting entries to the ledger, VAT returns, anything sent to the tax office or
+  auditor, and bank connection settings.
+- Deleting records, bulk-changing client data, exporting personal data outside the
+  app.
+- Statements about the company's licences, guarantees, legal status or prices that
+  aren't already approved and published.
+
+**Hard limits** (never, whatever the setting):
+- No spam or bought contact lists.
+- No messages to people without a lawful basis or marketing consent (GDPR).
+- WhatsApp outside its 24-hour window only with approved templates.
+- No fake reviews, accounts or engagement, and no breaking platform rules.
+- No pretending to be a human when someone sincerely asks.
+- No sharing client data with third parties.
+
+**Controls:**
+- A daily digest of everything the AI did.
+- A big **pause all AI** switch.
+- Per-channel daily limits on posts and messages.
+- The AI learns from approvals, rejections and results: which posts, offers and
+  channels bring paying clients.
+
 ### 4.2 Rules for the AI layer
 - **Provider abstraction**: one internal `llm.generate()` / `media.generate()` interface so
   models can be swapped per agent without code changes.
@@ -417,6 +485,6 @@ Money stored as integer minor units + currency code. All times UTC, shown in use
 3. ~~Which accounts exist?~~ Answered: YouTube, Facebook, Instagram, TikTok and WhatsApp as linked on the sites. More networks are planned (see section 3.3).
 4. ~~Accounting / bank?~~ Answered: own accounting module built from scratch; Eurobank Cyprus connected after the CRM is fully working; online from any device, computer as backup (see sections 3.6 and 5).
 5. ~~AI providers / budget?~~ Answered: Claude is the only paid AI, plus Canva (design) this month; everything else is open-source, self-hosted on a VM (see 4.1 and 4.1b). Claude API: Option B (no API, app runs on open models) confirmed long-term. Still open: VM provider/budget.
-6. Which actions may AI do automatically, and which always need your approval?
+6. ~~AI autonomy?~~ Answered: broad mandate for growth and visibility (local + international) and decision support. Three-level policy in section 4.2a.
 7. Domain for the app (e.g. `app.inonda…`) and do you already have a Wasmer account/team?
 8. Data to import on day one (spreadsheets, old CRM, contact lists)?
