@@ -108,12 +108,30 @@ step by an authorised person, unless the owner has switched that specific action
 - **Connector registry**: each channel is a plugin with a common interface
   (`connect`, `refreshToken`, `fetchMetrics`, `fetchInbox`, `publish`, `deletePost`,
   `health`). Adding a new network later = adding one connector, no core changes.
-- Initial connectors [CONFIRM which accounts exist]:
-  - Websites: Inonda site(s) — contact-form webhook into CRM, analytics (GA4 or
-    privacy-friendly alternative [CONFIRM]), blog/page publishing if CMS-backed.
-  - YouTube (Data API v3), Facebook Pages + Instagram Business (Meta Graph API),
-    LinkedIn (Company Pages), TikTok (Content Posting API), X, Pinterest, Threads,
-    Google Business Profile, Telegram/WhatsApp Business [CONFIRM].
+- **Accounts that exist now** (confirmed by owner; linked on inonda.site, inonda.org and
+  inonda.homes). These are the Phase 3 connectors:
+  - **YouTube:** youtube.com/@InondaLTD (Data API v3: upload, metadata, Shorts, analytics).
+  - **Facebook Page:** facebook.com/inondalimited (Meta Graph API).
+  - **Instagram:** instagram.com/inondaltd. Needs an Instagram Business or Creator account
+    linked to the Facebook Page so posts and Reels can be published.
+  - **TikTok:** tiktok.com/@inonda26 (Content Posting API; needs TikTok app review before
+    the app can post publicly).
+  - **WhatsApp:** +357 94 091 613 and +357 94 091 616, the main lead channel on every
+    site. Use the WhatsApp Business Platform (Cloud API) for the inbox, lead capture and
+    templated replies. [CONFIRM: which number is sales and which is support, and whether
+    the numbers are on the WhatsApp Business app today.]
+  - **Websites:** inonda.site, inonda.org and inonda.homes. Send contact forms and
+    estimator requests to the CRM by webhook, and read site analytics.
+- **Planned expansion** (owner intends to grow marketing onto more networks): the connector
+  design must make adding one a plug-in task. Likely next, in suggested order:
+  1. Google Business Profile (local search and reviews in Cyprus).
+  2. LinkedIn Company Page (investors and B2B clients).
+  3. X, Threads, Pinterest (before/after renovation photos), Telegram and Viber
+     (popular with RU/UA-speaking clients).
+  4. Property portals such as Bazaraki [CONFIRM which ones].
+- Note: the copy of the site in this repository still has placeholder links
+  (`facebook.com/`, `instagram.com/`, `linkedin.com/`) instead of the real profiles, and
+  only one WhatsApp number. Fix this in a separate website task.
 - Optional aggregator fallback (e.g. Ayrshare / Metricool / Zapier) for networks whose
   native API access is not yet approved — behind the same connector interface.
 - Per-channel status page: connected / token expiring / error, last sync, rate-limit use.
@@ -305,7 +323,7 @@ Money stored as integer minor units + currency code. All times UTC, shown in use
 
 1. ~~What does Inonda do?~~ Answered: services from inonda.site, inonda.org and inonda.homes, focused on selling property services (see section 2).
 2. ~~Who will use the app?~~ Answered: the owner and the requester/operator, both Admin (see section 2).
-3. Which social/video accounts exist today, and which are priorities?
+3. ~~Which accounts exist?~~ Answered: YouTube, Facebook, Instagram, TikTok and WhatsApp as linked on the sites. More networks are planned (see section 3.3).
 4. Which accounting software / bank / tax obligations must we connect to?
 5. Which AI and video providers do you already pay for, and what monthly AI budget?
 6. Which actions may AI do automatically, and which always need your approval?
