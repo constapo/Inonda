@@ -367,8 +367,28 @@ sends unless a human stops it)
 
 ## 5. Hosting & technical constraints — Wasmer.io
 
-- Target: **Wasmer Edge** app (new app, own subdomain first, custom domain later
-  [CONFIRM domain]).
+- Target: **Wasmer Edge** app on the **free Wasmer subdomain** (confirmed; no custom
+  domain for now). Wasmer is the **temporary home** until Inonda provides its own
+  server.
+- **Private mode (confirmed): internal tool for company staff only.**
+  - Sharing the link is how people find the app, **not** how they get in: anyone who
+    has the URL must still sign in.
+  - Accounts are invite-only (no public sign-up), with 2FA for both admins, short
+    sessions, and login-attempt limits.
+  - Every page and API requires auth; only health checks and webhook endpoints stay
+    open, and those verify signatures.
+  - Search engines are blocked (`noindex` header and meta tag, `robots.txt` disallow
+    all) and the URL appears nowhere public.
+  - Webhooks from the websites, WhatsApp and Meta use secret tokens or signature
+    checks.
+  - Optional later: limit access to known IPs or devices.
+- **Built to move (confirmed: will migrate to Inonda's own server).**
+  - No Wasmer-only features in business logic. Use standard Postgres, S3-compatible
+    storage and a plain HTTP app, also packaged as a Docker image.
+  - All config comes from environment variables.
+  - A migration runbook: export DB and files → import on the new server → switch the
+    URL → verify → keep Wasmer read-only for one week.
+  - The AI VM (section 4.1b) can later be the same server.
 - Before choosing the stack, the builder must **check current Wasmer Edge docs** for:
   supported runtimes (Python/PHP/JS-WinterJS/static/WASIX), managed database options,
   persistent volumes, cron/scheduled jobs, request time limits, outbound HTTP, secrets,
@@ -448,7 +468,7 @@ Money stored as integer minor units + currency code. All times UTC, shown in use
    external accounting / e-invoicing sync.
 8. **Decision support** — analyst agent, weekly briefing, scenarios.
 9. **Hardening & go-live** — security review, load test, backups/restore drill,
-   production deploy on custom domain, user training notes.
+   production deploy (Wasmer subdomain, private mode), user training notes; later migration to Inonda's own server.
 
 ---
 
@@ -486,5 +506,5 @@ Money stored as integer minor units + currency code. All times UTC, shown in use
 4. ~~Accounting / bank?~~ Answered: own accounting module built from scratch; Eurobank Cyprus connected after the CRM is fully working; online from any device, computer as backup (see sections 3.6 and 5).
 5. ~~AI providers / budget?~~ Answered: Claude is the only paid AI, plus Canva (design) this month; everything else is open-source, self-hosted on a VM (see 4.1 and 4.1b). Claude API: Option B (no API, app runs on open models) confirmed long-term. Still open: VM provider/budget.
 6. ~~AI autonomy?~~ Answered: broad mandate for growth and visibility (local + international) and decision support. Three-level policy in section 4.2a.
-7. Domain for the app (e.g. `app.inonda…`) and do you already have a Wasmer account/team?
+7. ~~Domain?~~ Answered: free Wasmer subdomain, fully private (login required), moving to Inonda's own server later. Still open: does a Wasmer account already exist?
 8. Data to import on day one (spreadsheets, old CRM, contact lists)?
