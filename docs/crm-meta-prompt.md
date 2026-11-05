@@ -217,17 +217,53 @@ It must not copy the usual Xero or QuickBooks layout.
 
 ### 4.1 Agents (each = role + allowed tools + approval policy + budget)
 
+**Budget rule (confirmed):** the only paid AI is Claude. Everything else must be
+**open-source, self-hosted** models running on Inonda's own "virtual computer" (a cloud VM),
+reached by the app over a private API. Claude is the lead; open models do the bulk work.
+
 | Agent | Model (default) | Does | Needs approval for |
 |---|---|---|---|
-| **Lead orchestrator** | Claude (latest Opus/Sonnet) | Understands the request, plans, routes to specialists, merges results, explains | Anything external |
-| CRM assistant | Claude Haiku/Sonnet | Dedup, enrich, summarise contact history, suggest next step | Bulk edits, deletes |
-| Marketing / content | Claude Sonnet | Briefs, scripts, captions, hashtags per channel, content calendar | Publishing |
-| Video producer | Claude + video/image/voice models (e.g. Veo/Kling/Runway, ElevenLabs) [CONFIRM providers] | Storyboards, generates/assembles clips, subtitles, thumbnails | Rendering above cost cap; publishing |
-| Publisher | rules + Claude | Schedules and posts via connectors, retries, reports results | Every first post per channel; then per policy |
-| Documents | Claude Sonnet | Drafts contracts/letters from templates + CRM data | Sending / signing |
-| Bookkeeper | Claude Sonnet | Categorise, reconcile, anomaly detection, draft entries | Every ledger change |
-| Analyst | Claude Opus | Weekly briefing, decision support, forecasts | — (read-only) |
-| Inbox triage | Claude Haiku | Classify incoming messages, draft replies, create leads | Sending replies |
+| **Lead orchestrator** | Claude | Plans, routes, reviews specialist output, handles hard reasoning | Anything external |
+| CRM assistant | Open LLM (e.g. Qwen / Llama / Mistral 7–14B) | Dedup, summarise history, suggest next step | Bulk edits, deletes |
+| Inbox triage | Open LLM (small, fast) | Classify messages and language, draft replies, create leads | Sending replies |
+| Marketing / content | Open LLM drafts → Claude polishes the final | Briefs, scripts, captions in 6 languages, hashtags | Publishing |
+| Video producer | FFmpeg pipeline (reuse `scripts/video-ad/`) + open TTS (Piper / XTTS) + Whisper subtitles + open image model (FLUX.1-schnell / SDXL) | Stock-footage or photo edits, voice-over, subtitles, thumbnails; open video models (Wan / LTX-Video) only if a GPU is available | Publishing |
+| Publisher | Rules (no LLM) + small open LLM | Schedules and posts through connectors, retries | First post per channel, then per policy |
+| Documents | Open LLM drafts → Claude reviews contracts | Quotes, offers, contracts, letters from templates | Sending / signing |
+| Bookkeeper | Rules + OCR (Tesseract / PaddleOCR) + open LLM | Read receipts, categorise, reconcile, flag anomalies | Every ledger change |
+| Analyst | Claude (SQL results passed in, no raw data dumps) | Weekly briefing, decision support | — (read-only) |
+
+### 4.1b The AI "virtual computer" (self-hosted models)
+- **Separate from Wasmer.** Wasmer Edge cannot run LLMs, so the models run on their own
+  cloud VM (Linux).
+  - Start small with a CPU-only VPS: 8–16 vCPU and 32 GB RAM runs quantised 7–8B models,
+    Whisper, Piper and OCR at modest speed.
+  - Add a rented GPU later, by the hour or month, only if speed or video generation
+    needs it.
+  - [CONFIRM: provider and budget for the VM.]
+- **Runtime:** Ollama or llama.cpp server, with vLLM if a GPU is added. It exposes an
+  **OpenAI-compatible API** behind auth and private networking (Tailscale/WireGuard or
+  mTLS), so the app's `llm.generate()` can switch between Claude and local models per
+  agent.
+- **Queue:** the app on Wasmer puts jobs on a queue (e.g. Redis/Postgres-based). A worker
+  on the VM picks them up, runs the model or FFmpeg, uploads results to object storage,
+  and calls back. No long tasks run inside a Wasmer request.
+- **Licences:** use only models whose licence allows commercial use (e.g. Apache-2.0 or
+  MIT; Llama and Gemma licences have conditions). Record each model's licence in the
+  admin panel. Check voice-cloning and image-model terms before use.
+- **Data stays private:** client data sent to local models never leaves Inonda's VM.
+  When data goes to Claude, send only the minimum needed (no full client lists, mask
+  IBANs and ID numbers).
+- **Claude usage — important:** a Claude chat subscription (Pro/Max) does **not** cover
+  the app calling Claude automatically. That needs the **Anthropic API**, billed
+  separately per use.
+  - Option A: a small API budget with a hard monthly cap set in the app and in the
+    Anthropic console.
+  - Option B: no API at launch. Claude is used through Claude Code / chat by the two
+    users for planning, building and reviews, and the app runs fully on open models.
+  - [CONFIRM A or B.]
+- **Fallback:** if the VM is down, the app keeps working (CRM, accounting, manual
+  publishing) and AI jobs wait in the queue.
 
 ### 4.2 Rules for the AI layer
 - **Provider abstraction**: one internal `llm.generate()` / `media.generate()` interface so
@@ -368,7 +404,7 @@ Money stored as integer minor units + currency code. All times UTC, shown in use
 2. ~~Who will use the app?~~ Answered: the owner and the requester/operator, both Admin (see section 2).
 3. ~~Which accounts exist?~~ Answered: YouTube, Facebook, Instagram, TikTok and WhatsApp as linked on the sites. More networks are planned (see section 3.3).
 4. ~~Accounting / bank?~~ Answered: own accounting module built from scratch; Eurobank Cyprus connected after the CRM is fully working; online from any device, computer as backup (see sections 3.6 and 5).
-5. Which AI and video providers do you already pay for, and what monthly AI budget?
+5. ~~AI providers / budget?~~ Answered: Claude is the only paid AI; everything else is open-source, self-hosted on a VM (see 4.1 and 4.1b). Still open: VM provider/budget, and Claude API option A or B.
 6. Which actions may AI do automatically, and which always need your approval?
 7. Domain for the app (e.g. `app.inonda…`) and do you already have a Wasmer account/team?
 8. Data to import on day one (spreadsheets, old CRM, contact lists)?
