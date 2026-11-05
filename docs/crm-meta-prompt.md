@@ -266,11 +266,14 @@ library for the Publisher.
 - **Claude usage — important:** a Claude chat subscription (Pro/Max) does **not** cover
   the app calling Claude automatically. That needs the **Anthropic API**, billed
   separately per use.
-  - Option A: a small API budget with a hard monthly cap set in the app and in the
-    Anthropic console.
-  - Option B: no API at launch. Claude is used through Claude Code / chat by the two
-    users for planning, building and reviews, and the app runs fully on open models.
-  - [CONFIRM A or B.]
+  - **Decision (confirmed, long-term plan): Option B.** No Anthropic API in the app.
+    Claude is used by the two users through Claude Code / chat to plan, build, review
+    and analyse. The app itself runs **fully on open-source self-hosted models**.
+  - So every in-app agent marked "Claude" above runs on the best available local model.
+    Human review in Claude chat replaces automatic Claude calls: for example, export
+    the weekly data summary and ask Claude for the briefing.
+  - Keep `llm.generate()` provider-agnostic so an API provider *could* be added later
+    without code changes, but it is off by default.
 - **Fallback:** if the VM is down, the app keeps working (CRM, accounting, manual
   publishing) and AI jobs wait in the queue.
 
@@ -413,7 +416,7 @@ Money stored as integer minor units + currency code. All times UTC, shown in use
 2. ~~Who will use the app?~~ Answered: the owner and the requester/operator, both Admin (see section 2).
 3. ~~Which accounts exist?~~ Answered: YouTube, Facebook, Instagram, TikTok and WhatsApp as linked on the sites. More networks are planned (see section 3.3).
 4. ~~Accounting / bank?~~ Answered: own accounting module built from scratch; Eurobank Cyprus connected after the CRM is fully working; online from any device, computer as backup (see sections 3.6 and 5).
-5. ~~AI providers / budget?~~ Answered: Claude is the only paid AI, plus Canva (design) this month; everything else is open-source, self-hosted on a VM (see 4.1 and 4.1b). Still open: VM provider/budget, and Claude API option A or B.
+5. ~~AI providers / budget?~~ Answered: Claude is the only paid AI, plus Canva (design) this month; everything else is open-source, self-hosted on a VM (see 4.1 and 4.1b). Claude API: Option B (no API, app runs on open models) confirmed long-term. Still open: VM provider/budget.
 6. Which actions may AI do automatically, and which always need your approval?
 7. Domain for the app (e.g. `app.inonda…`) and do you already have a Wasmer account/team?
 8. Data to import on day one (spreadsheets, old CRM, contact lists)?
