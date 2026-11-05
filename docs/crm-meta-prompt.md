@@ -73,8 +73,8 @@ step by an authorised person, unless the owner has switched that specific action
     still records which of the two users approved it.
   - [CONFIRM later: should some actions need both people to approve (for example
     payments or deleting records), or is one approval enough?]
-- Countries of operation & tax jurisdiction: [CONFIRM: e.g. Greece → VAT, myDATA/AADE e-books].
-- Currency: [CONFIRM: EUR primary, others?].
+- Country & tax jurisdiction: **Cyprus** (Cyprus Tax Department, VAT, statutory audit).
+- Currency: **EUR**.
 - UI languages: English first, then Greek; architecture must allow all six site languages.
 - Existing tools to integrate or replace: [CONFIRM: accounting software, email provider,
   calendar, cloud drive, any current CRM or spreadsheets to import].
@@ -154,14 +154,47 @@ step by an authorised person, unless the owner has switched that specific action
 - E-signature integration [CONFIRM provider], versioning, PDF export, storage per
   contact/deal.
 
-### 3.6 Accounting & finance
-- Invoices (issue, send, track paid/unpaid, reminders), expenses with receipt upload +
-  OCR, bank-feed import [CONFIRM bank/CSV], categories / chart of accounts.
-- Sync with external accounting system or local e-invoicing obligations [CONFIRM — e.g.
-  myDATA in Greece]; the app is **not** the legal book of record unless explicitly decided.
-- AI bookkeeper: suggests categorisation, flags duplicates/anomalies, drafts journal
-  entries — **always pending human approval**, never posts to the ledger by itself.
-- Reports: P&L, cash flow, receivables aging, budget vs actual, per-channel marketing ROI.
+### 3.6 Accounting & finance — built in-house (confirmed)
+Owner decision: **no third-party accounting software.** Inonda builds its own accounting
+module inside the app, with a dashboard designed from scratch around how Inonda works.
+It must not copy the usual Xero or QuickBooks layout.
+- **Dashboard concept: answers first, not ledgers first.**
+  - Cards: cash in the bank today, what clients owe us (by job and by property), what we
+    owe suppliers and subcontractors, profit per job, profit per service line
+    (management / maintenance / repairs / renovation), VAT due this period, and the
+    cash forecast for the next 30, 60 and 90 days.
+  - Drill down from any card to the transactions behind it.
+- **Core engine: proper double-entry bookkeeping** behind the simple UI.
+  - Chart of accounts, journals, invoices with sequential numbering, credit notes,
+    expenses, supplier bills, and fixed assets.
+  - Entries can't be deleted: corrections are reversals. Every change is logged and
+    periods can be locked.
+- **Ties to the CRM:** quote → job → invoice → payment all link to one client and
+  property. Job costing covers materials, subcontractor and labour hours against the
+  quoted price. Management contracts get recurring invoices.
+- **Expenses:** photo of a receipt from the phone → OCR → AI suggests category and VAT
+  → human approves.
+- **Cyprus compliance** [CONFIRM every rule with Inonda's accountant/auditor before go-live]:
+  - VAT returns to the Cyprus Tax Department, with standard and reduced rates (the
+    reduced rate can apply to some renovation work).
+  - VIES / reverse charge where relevant.
+  - Annual statutory financial statements: Cyprus companies are audited, so give the
+    auditor read-only access and exports.
+  - Corporate tax figures, and records kept for at least 6 years.
+  - Watch for upcoming EU/Cyprus e-invoicing mandates (ViDA). The invoice data model
+    must be ready for structured e-invoices (EN 16931 / UBL).
+- **AI bookkeeper:** categorises, reconciles, flags duplicates and anomalies, and drafts
+  entries. It **always needs human approval** and never posts to the ledger by itself.
+- **Bank: Eurobank Cyprus (business account).** Connect it **after the CRM is fully
+  working** (a later phase).
+  - Preferred: the bank's PSD2 / Open Banking API, read-only (balances and
+    transactions), through Eurobank's developer portal or a licensed aggregator
+    [CONFIRM what Eurobank Cyprus offers].
+  - Fallback from day one: import statement files (CSV / MT940 / CAMT.053).
+  - Never store online-banking passwords. No payment initiation unless the owner
+    explicitly decides on it later.
+- **Reports:** P&L, balance sheet, cash flow, VAT report, receivables and payables aging,
+  job and service-line profitability, budget vs actual, and marketing ROI per channel.
 
 ### 3.7 Decision support
 - "Ask the company" chat: natural-language questions over CRM, finance and channel data
@@ -224,6 +257,16 @@ step by an authorised person, unless the owner has switched that specific action
   supported runtimes (Python/PHP/JS-WinterJS/static/WASIX), managed database options,
   persistent volumes, cron/scheduled jobs, request time limits, outbound HTTP, secrets,
   and pricing. Record the findings in this section.
+- **Access model (confirmed):** the app runs **online** and works from any device (phone,
+  tablet, laptop) in the browser. Build it as a responsive **PWA** that can be installed
+  on phones and desktops.
+- **Computer as backup (confirmed):**
+  - Automatic encrypted backups (database dump + files) every night, downloaded to the
+    owner's computer, plus an off-site copy.
+  - A one-click "export everything" (CSV + PDF + JSON) to the computer.
+  - A documented restore procedure, tested every quarter.
+  - Optional: a read-only offline copy of key data on the computer for when the
+    internet is down.
 - Expected split (adjust after the check):
   - **On Wasmer**: web UI, API, auth, CRM database access, webhooks, light AI calls
     (LLM APIs are just HTTPS calls).
@@ -324,7 +367,7 @@ Money stored as integer minor units + currency code. All times UTC, shown in use
 1. ~~What does Inonda do?~~ Answered: services from inonda.site, inonda.org and inonda.homes, focused on selling property services (see section 2).
 2. ~~Who will use the app?~~ Answered: the owner and the requester/operator, both Admin (see section 2).
 3. ~~Which accounts exist?~~ Answered: YouTube, Facebook, Instagram, TikTok and WhatsApp as linked on the sites. More networks are planned (see section 3.3).
-4. Which accounting software / bank / tax obligations must we connect to?
+4. ~~Accounting / bank?~~ Answered: own accounting module built from scratch; Eurobank Cyprus connected after the CRM is fully working; online from any device, computer as backup (see sections 3.6 and 5).
 5. Which AI and video providers do you already pay for, and what monthly AI budget?
 6. Which actions may AI do automatically, and which always need your approval?
 7. Domain for the app (e.g. `app.inonda…`) and do you already have a Wasmer account/team?
