@@ -64,8 +64,15 @@ step by an authorised person, unless the owner has switched that specific action
     invoice → warranty and follow-up → upsell into a maintenance plan or management.
   - **Lead routing:** each lead is tagged with the website it came from and the service
     line it is for.
-- Users: [CONFIRM: number of staff, roles — owner, manager, agent, accountant, marketer,
-  external accountant read-only].
+- Users (confirmed): **2 users at launch**, the company owner and the app's
+  requester/operator. Both get full **Admin** rights and both can approve AI actions.
+  - Keep the RBAC system in place from day one, with ready-made roles that start
+    unused: Manager, Office staff, Technician (mobile, sees only their jobs),
+    Accountant (finance, read-only), Marketer. Adding staff later only needs an invite.
+  - Small team, so keep onboarding light: no complex org setup. Every AI approval
+    still records which of the two users approved it.
+  - [CONFIRM later: should some actions need both people to approve (for example
+    payments or deleting records), or is one approval enough?]
 - Countries of operation & tax jurisdiction: [CONFIRM: e.g. Greece → VAT, myDATA/AADE e-books].
 - Currency: [CONFIRM: EUR primary, others?].
 - UI languages: English first, then Greek; architecture must allow all six site languages.
@@ -297,7 +304,7 @@ Money stored as integer minor units + currency code. All times UTC, shown in use
 ## 11. Open questions for the owner (answer before Phase 1)
 
 1. ~~What does Inonda do?~~ Answered: services from inonda.site, inonda.org and inonda.homes, focused on selling property services (see section 2).
-2. Who will use the app and with which permissions?
+2. ~~Who will use the app?~~ Answered: the owner and the requester/operator, both Admin (see section 2).
 3. Which social/video accounts exist today, and which are priorities?
 4. Which accounting software / bank / tax obligations must we connect to?
 5. Which AI and video providers do you already pay for, and what monthly AI budget?
