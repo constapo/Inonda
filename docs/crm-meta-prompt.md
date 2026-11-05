@@ -370,6 +370,11 @@ sends unless a human stops it)
 - Target: **Wasmer Edge** app on the **free Wasmer subdomain** (confirmed; no custom
   domain for now). Wasmer is the **temporary home** until Inonda provides its own
   server.
+- **Wasmer account (confirmed):** an account already exists, and a new one can be made
+  with the company email. Recommended: create the **company-owned** account with the
+  company email and host the app under its namespace or team. Invite both users as
+  members, each with their own login and 2FA, so ownership stays with Inonda LTD.
+  Keep the recovery email and 2FA backup codes in the company password vault.
 - **Private mode (confirmed): internal tool for company staff only.**
   - Sharing the link is how people find the app, **not** how they get in: anyone who
     has the URL must still sign in.
@@ -506,5 +511,5 @@ Money stored as integer minor units + currency code. All times UTC, shown in use
 4. ~~Accounting / bank?~~ Answered: own accounting module built from scratch; Eurobank Cyprus connected after the CRM is fully working; online from any device, computer as backup (see sections 3.6 and 5).
 5. ~~AI providers / budget?~~ Answered: Claude is the only paid AI, plus Canva (design) this month; everything else is open-source, self-hosted on a VM (see 4.1 and 4.1b). Claude API: Option B (no API, app runs on open models) confirmed long-term. Still open: VM provider/budget.
 6. ~~AI autonomy?~~ Answered: broad mandate for growth and visibility (local + international) and decision support. Three-level policy in section 4.2a.
-7. ~~Domain?~~ Answered: free Wasmer subdomain, fully private (login required), moving to Inonda's own server later. Still open: does a Wasmer account already exist?
+7. ~~Domain?~~ Answered: free Wasmer subdomain, fully private (login required), moving to Inonda's own server later. Wasmer: account exists; create a company-email account to own the app.
 8. Data to import on day one (spreadsheets, old CRM, contact lists)?
