@@ -33,11 +33,37 @@ step by an authorised person, unless the owner has switched that specific action
 
 ---
 
-## 2. Business context [CONFIRM all]
+## 2. Business context
 
-- Company: **Inonda** — current public site in this repository (static HTML, languages
-  EN / EL / HE / RO / RU / UK). Business domain: [CONFIRM: property management /
-  real estate services / other].
+- Company: **Inonda LTD**, a registered Cyprus company based in Nicosia, serving all of
+  Cyprus (Nicosia, Strovolos, Latsia, Aglantzia, Lakatamia, Engomi, Limassol, Larnaca,
+  Protaras, Agia Napa). **Confirmed by owner:** the app covers exactly the activities on
+  the company websites, and its focus is **selling services for properties**.
+- Websites (all in EL / EN / RU / UK / HE / RO):
+  - **inonda.site**: property management for landlords, investors, homeowners and
+    tenants. Covers tenant communication, maintenance with 24/7 issue reporting and
+    cost approval before work, move-in / routine / move-out inspections with photo
+    records, rental pricing, and regular owner reports. Sales funnel: contact →
+    free property assessment → management proposal → ongoing management.
+    This repository holds this site.
+  - **inonda.org**: contractor for maintenance, repairs and home transformation.
+    - Maintenance: maintenance plans, air conditioning, roof waterproofing and damp.
+    - Repairs: plumbing, electrical, handyman and urgent repairs.
+    - Transformation: kitchens, bathrooms, full renovations, painting, gypsum, flooring
+      and tiling, doors and windows, outdoor works and pergolas.
+    - Sales funnel: free quote or site visit (also via WhatsApp) → itemised written
+      quote → work → written workmanship warranty.
+  - **inonda.homes**: a service estimator, the price-estimate entry point for leads.
+- What this means for the CRM:
+  - **Core records:** clients (owners, landlords, investors, tenants, businesses),
+    properties, service requests or jobs, site visits, quotes, maintenance-plan and
+    management contracts, inspections (with photos), invoices, and technicians or
+    subcontractors.
+  - **Main pipeline:** lead (website form, estimator, WhatsApp, phone, social) →
+    assessment or site visit → quote or proposal → won/lost → job scheduled → done →
+    invoice → warranty and follow-up → upsell into a maintenance plan or management.
+  - **Lead routing:** each lead is tagged with the website it came from and the service
+    line it is for.
 - Users: [CONFIRM: number of staff, roles — owner, manager, agent, accountant, marketer,
   external accountant read-only].
 - Countries of operation & tax jurisdiction: [CONFIRM: e.g. Greece → VAT, myDATA/AADE e-books].
@@ -270,8 +296,7 @@ Money stored as integer minor units + currency code. All times UTC, shown in use
 
 ## 11. Open questions for the owner (answer before Phase 1)
 
-1. What exactly does Inonda do, and which records matter most (clients, properties,
-   projects…)?
+1. ~~What does Inonda do?~~ Answered: services from inonda.site, inonda.org and inonda.homes, focused on selling property services (see section 2).
 2. Who will use the app and with which permissions?
 3. Which social/video accounts exist today, and which are priorities?
 4. Which accounting software / bank / tax obligations must we connect to?
